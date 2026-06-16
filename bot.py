@@ -4,7 +4,7 @@ import os
 
 TOKEN = os.environ.get("DISCORD_BOT_TOKEN")
 
-DEFAULT_LINK = "https://discord.gg/pSyhsnbwV5"
+DEFAULT_LINK = "https://discord.gg/nF4YCQwGt"
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -15,16 +15,14 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-print(f"Bot eingeloggt als {client.user}")
-await client.user.edit(username="Grace Owner")
+    print(f"Bot eingeloggt als {client.user}")
+    await client.user.edit(username="Corazon")
 
 
 @client.event
 async def on_message(message):
-if message.author.bot:
-return
-if not message.guild:
-return
+    if message.author.bot:
+        return
 
 content = message.content.strip()
 
